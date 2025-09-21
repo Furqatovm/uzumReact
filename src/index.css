@@ -1,0 +1,12 @@
+@import "tailwindcss";
+body{
+  font-family: "Inter", sans-serif;
+}
+
+*,html{
+  transition: all 0.2s linear;
+}
+
+.my-scrollbar::-webkit-scrollbar{
+  display: none;
+}
