@@ -2,6 +2,12 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom';
 import Loader from './loader';
+import { FaRegHeart } from "react-icons/fa";
+import { MdDownloadDone } from "react-icons/md";
+import { TbShoppingBagCheck } from "react-icons/tb";
+
+
+
 import Card from './card';
 
 const Child = () => {
@@ -28,7 +34,7 @@ const Child = () => {
         fetchData()
     }, [id])
   return (
-    <div className='max-w-[1250px] mx-auto px-[1rem] my-[1rem] flex flex-wrap'>
+    <div className='max-w-[1250px] mx-auto px-[1rem] my-[1rem] flex flex-wrap justify-between items-start'>
         <div className='w-[65%]'>
             <div>
                 <h1 className='text-[1.8rem] font-semibold text-[#1F2026]'>{ob.title}</h1>
@@ -74,9 +80,35 @@ const Child = () => {
                     }
                 </div>
         </div>
-
-        <div className='w-[35%]'>
-                    
+ 
+        <div className='w-[30%] border border-gray-400 rounded-[20px] p-[1.5rem] py-[2rem] flex flex-col gap-2'>
+                <h3 className='text-[2rem] text-[#7f4dff] font-bold'>{(ob.price)?.toLocaleString()} so'm</h3>
+                <span>Uzum kartasiz {(ob.price)+3} <span className='line-through text-[#7e818c]'>{(ob.price)+6}</span></span>
+                <div>
+        <span className='text-[1rem] inline-block text-[#1f2026] font-medium py-[1px] rounded-[4px] px-[4px] bg-[#ffff00] '>{(ob.price/12).toLocaleString()} so'm/oyiga</span>
+            </div>
+            <div className='flex gap-1'>
+                <button className='py-[10px] px-[1rem] bg-gray-300 font-medium text-[#1f2026] rounded-[10px] w-[80%]'>Xarid qilish uchun</button>
+                <button className='py-[10px] px-[1rem] bg-gray-300 font-medium text-[#1f2026] rounded-[10px] w-[20%] flex items-center justify-center text-[1.3rem]'>
+                    <FaRegHeart />
+                </button>
+            </div>
+            <button className='bg-[#7000ff] py-[1rem] w-full rounded-[10px] text-white font-medium cursor-pointer my-2'>
+                <span>Savatga Qo'shish</span>
+                <span className='block text-[12px]'>{ob.shippingInformation}</span>
+            </button>
+            <div className='flex gap-1 items-center'>
+                <div className='bg-[#d7f5dd] p-[0.7rem] rounded-[10px] text-[1.2rem]'>
+                <MdDownloadDone />
+                </div>
+                <span>{ob.stock} kishini Savatida turibdi</span>
+            </div>
+            <div className='flex gap-1 items-center'>
+                <div className='bg-[#ffefcc] p-[0.7rem] rounded-[10px] text-[1.2rem]'>
+                <TbShoppingBagCheck />
+                </div>
+                <span>{ob.stock-37} kishi sotib oldi</span>
+            </div>
         </div>
 
 
