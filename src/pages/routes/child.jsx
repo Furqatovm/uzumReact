@@ -107,7 +107,7 @@ const Child = () => {
                 <div className='bg-[#ffefcc] p-[0.7rem] rounded-[10px] text-[1.2rem]'>
                 <TbShoppingBagCheck />
                 </div>
-                <span>{ob.stock-37} kishi sotib oldi</span>
+                <span>{ob.stock-4} kishi sotib oldi</span>
             </div>
         </div>
 
