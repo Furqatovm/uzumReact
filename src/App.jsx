@@ -1,4 +1,4 @@
-import React from 'react'
+import {lazy} from 'react'
 import Home from './pages/routes/mhome'
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom'
 import Layout from './layout/layout'
