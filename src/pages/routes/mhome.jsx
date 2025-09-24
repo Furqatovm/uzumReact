@@ -5,7 +5,6 @@ import axios, { Axios } from 'axios'
 import Card from './card'
 import Loader from './loader'
 import { Link } from 'react-router-dom'
-import Sections from './sections'
 
 
 const Home = () => {
